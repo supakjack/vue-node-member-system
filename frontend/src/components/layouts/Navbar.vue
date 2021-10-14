@@ -2,7 +2,14 @@
   <div>
     <vs-card>
       <div class="flex justify-between">
-        <span>ระบบสมาชิก</span>
+        <div class="flex justify-between">
+          <img
+            style="max-width:2.5rem;"
+            class="mr-3"
+            src="https://i.picsum.photos/id/21/400/400.jpg?hmac=fGXESAhrn1tB0FjFr1unqDHvAwhlgc4LjQElslttyzU"
+          />
+          <span class="mt-2 text-xl">ระบบจัดการสมาชิก</span>
+        </div>
         <vs-button
           @click="active = !active"
           color="dark"
