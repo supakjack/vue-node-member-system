@@ -1,21 +1,20 @@
 <template lang="html">
   <div>
     <vs-breadcrumb>
-      <li>
-        <!-- <router-link to="/about">About</router-link> -->
-      </li>
-
       <li aria-current="page" class="active">จัดการสมาชิก</li>
     </vs-breadcrumb>
+
     <vs-table
+      class="p-5"
+      :search="true"
       :max-items="descriptionItems[0]"
       pagination
       :data="users"
       description
       :description-items="descriptionItems"
-      description-title="Registries"
-      description-connector="of"
-      description-body="Pages"
+      description-title="แสดง"
+      description-connector="จาก"
+      description-body="จำนวนแถว"
     >
       <template slot="header">
         <h3>
@@ -23,28 +22,32 @@
         </h3>
       </template>
       <template slot="thead">
+        <vs-th> รูปประจำตัว </vs-th>
         <vs-th> ชื่อผู้ใช้งาน </vs-th>
         <vs-th> ชื่อ - นามสกุล </vs-th>
         <vs-th> ที่อยู่ </vs-th>
-        <vs-th> รูปประจำตัว </vs-th>
       </template>
 
       <template slot-scope="{ data }">
         <vs-tr :key="indextr" v-for="(tr, indextr) in data">
-          <vs-td :data="data[indextr].email">
-            {{ data[indextr].email }}
+          <vs-td :data="data[indextr].imgPath">
+            <img
+              style="max-width:5rem;"
+              class="rounded-2xl"
+              :src="data[indextr].imgPath"
+            />
           </vs-td>
 
           <vs-td :data="data[indextr].username">
             {{ data[indextr].username }}
           </vs-td>
 
-          <vs-td :data="data[indextr].id">
-            {{ data[indextr].website }}
+          <vs-td :data="data[indextr].fullname">
+            {{ data[indextr].fullname }}
           </vs-td>
 
-          <vs-td :data="data[indextr].id">
-            {{ data[indextr].id }}
+          <vs-td :data="data[indextr].address">
+            {{ data[indextr].address }}
           </vs-td>
         </vs-tr>
       </template>
@@ -59,80 +62,91 @@ export default {
     users: [
       {
         id: 1,
-        name: "Leanne Graham",
+        fullname: "Leanne Graham",
         username: "Bret",
-        email: "Sincere@april.biz",
-        website: "hildegard.org",
+        address: "Thailand Chonburi",
+        imgPath:
+          "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
       },
       {
         id: 2,
-        name: "Ervin Howell",
+        fullname: "Ervin Howell",
         username: "Antonette",
-        email: "Shanna@melissa.tv",
-        website: "anastasia.net",
+        address: "Thailand Chonburi",
+        imgPath:
+          "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
       },
       {
         id: 3,
-        name: "Clementine Bauch",
+        fullname: "Clementine Bauch",
         username: "Samantha",
-        email: "Nathan@yesenia.net",
-        website: "ramiro.info",
+        address: "Thailand Chonburi",
+        imgPath:
+          "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
       },
       {
         id: 4,
-        name: "Patricia Lebsack",
+        fullname: "Patricia Lebsack",
         username: "Karianne",
-        email: "Julianne.OConner@kory.org",
-        website: "kale.biz",
+        address: "Thailand Chonburi.org",
+        imgPath:
+          "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
       },
       {
         id: 5,
-        name: "Chelsey Dietrich",
+        fullname: "Chelsey Dietrich",
         username: "Kamren",
-        email: "Lucio_Hettinger@annie.ca",
-        website: "demarco.info",
+        address: "Thailand Chonburi",
+        imgPath:
+          "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
       },
       {
         id: 6,
-        name: "Mrs. Dennis Schulist",
+        fullname: "Mrs. Dennis Schulist",
         username: "Leopoldo_Corkery",
-        email: "Karley_Dach@jasper.info",
-        website: "ola.org",
+        address: "Thailand Chonburi",
+        imgPath:
+          "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
       },
       {
         id: 7,
-        name: "Kurtis Weissnat",
+        fullname: "Kurtis Weissnat",
         username: "Elwyn.Skiles",
-        email: "Telly.Hoeger@billy.biz",
-        website: "elvis.io",
+        address: "Thailand Chonburi.biz",
+        imgPath:
+          "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
       },
       {
         id: 8,
-        name: "Nicholas Runolfsdottir V",
+        fullname: "Nicholas Runolfsdottir V",
         username: "Maxime_Nienow",
-        email: "Sherwood@rosamond.me",
-        website: "jacynthe.com",
+        address: "Thailand Chonburi",
+        imgPath:
+          "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
       },
       {
         id: 9,
-        name: "Glenna Reichert",
+        fullname: "Glenna Reichert",
         username: "Delphine",
-        email: "Chaim_McDermott@dana.io",
-        website: "conrad.com",
+        address: "Thailand Chonburi",
+        imgPath:
+          "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
       },
       {
         id: 10,
-        name: "Clementina DuBuque",
+        fullname: "Clementina DuBuque",
         username: "Moriah.Stanton",
-        email: "Rey.Padberg@karina.biz",
-        website: "ambrose.net",
+        address: "Thailand Chonburi.biz",
+        imgPath:
+          "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
       },
       {
         id: 11,
-        name: "Kalolo Rich",
+        fullname: "Kalolo Rich",
         username: "Kalolo.Rick",
-        email: "Kalolo.Rich@jez.io",
-        website: "kalolo.net",
+        address: "Thailand Chonburi.io",
+        imgPath:
+          "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
       },
     ],
   }),

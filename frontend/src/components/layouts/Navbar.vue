@@ -3,15 +3,16 @@
     <vs-card>
       <div class="flex justify-between">
         <div class="flex justify-between">
-          <img
-            style="max-width:2.5rem;"
+          <vs-avatar
+            size="40px"
             class="mr-3"
             src="https://i.picsum.photos/id/21/400/400.jpg?hmac=fGXESAhrn1tB0FjFr1unqDHvAwhlgc4LjQElslttyzU"
           />
-          <span class="mt-2 text-xl">ระบบจัดการสมาชิก</span>
+          <span class="text-xl self-center">ระบบจัดการสมาชิก</span>
         </div>
         <vs-button
           @click="active = !active"
+          class="self-center"
           color="dark"
           icon="menu"
           type="flat"
@@ -26,16 +27,17 @@
       spacer
       v-model="active"
     >
-      <div class="header-sidebar" slot="header">
+      <div
+        class="header-sidebar flex flex-col flex-wrap content-center"
+        slot="header"
+      >
         <vs-avatar
           size="70px"
           src="https://randomuser.me/api/portraits/men/85.jpg"
         />
-
-        <h4>
-          My Name
-          <vs-button color="primary" icon="more_horiz" type="flat"></vs-button>
-        </h4>
+        <span class="text-center">
+          Admin
+        </span>
       </div>
 
       <vs-sidebar-item index="1" icon="question_answer">
